@@ -1,2 +1,2 @@
-# Binary-Scan-Automated-Tool
+Automated-Analyzer-Tool
 An automated tool that processes the CVEs
