@@ -42,7 +42,7 @@ class blackduck_cve():
         self.result = result
         self.note = note
 
-    def rationale():
+    def rationaled():
         pass
 
 

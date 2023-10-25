@@ -34,14 +34,19 @@ def get_rationale_cve_information(csv, format):
     return result
 
 
-def create_cve(
+def create_cve(csv, tool):
+    
+    # read csv
+    CVEs = csv
+
+    for cve in CVEs:
         # pass in CVE information
-        CVE, tool
-        ):
-    if tool == 1: # Blackduck
-        create_new_blackduck_cve(CVE)
-    else:
-        create_new_scantist_cve(CVE)
+        if tool == 1: # Blackduck
+            create_new_blackduck_cve(cve)
+        else:
+            create_new_scantist_cve(cve)
+            
+        print("done")
     
 
 def get_all_cve():

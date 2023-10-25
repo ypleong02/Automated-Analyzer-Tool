@@ -1,5 +1,5 @@
 from modules import api
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
 
@@ -10,8 +10,10 @@ def index():
     # return cve
     # for key, value in cve[0].items():
     #     print(f"{key:18} : {value}")
-    cve = api.get_all_cve()
-    return cve
+    
+    # cve = api.get_all_cve()
+    # return 
+    return "Home"
 
 if __name__ == "__main__":
     app.run(debug=True)
