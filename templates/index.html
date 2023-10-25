@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+    </head>
+    <body>
+        {% for cve in cves %}
+            <div style="margin-bottom: 10px;">
+                {% for key in cve %}
+                    <div>{{key}} : {{cve[key]}}</div>
+                {% endfor %}
+            </div>
+        {% endfor %}    
+    </body>
+</html>

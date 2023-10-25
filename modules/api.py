@@ -50,8 +50,8 @@ def create_cve(csv, tool):
     
 
 def get_all_cve():
-    cve = get_all_cve_info()
-    return cve
+    return get_all_cve_info()
+    
 
 
 if __name__ == "__main__":
