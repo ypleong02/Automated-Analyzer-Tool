@@ -4,7 +4,7 @@ from modules.db import check_if_cve_exist
 from modules.db import create_new_blackduck_cve
 from modules.db import create_new_scantist_cve
 from modules.db import get_all_cve_info
-
+import pandas as pd
 
 def get_rationale_cve_information(csv, format):
     
@@ -34,19 +34,24 @@ def get_rationale_cve_information(csv, format):
     return result
 
 
-def create_cve(
+def create_cve(csv, tool):
+    
+    # read csv
+    CVEs = csv
+
+    for cve in CVEs:
         # pass in CVE information
-        CVE, tool
-        ):
-    if tool == 1: # Blackduck
-        create_new_blackduck_cve(CVE)
-    else:
-        create_new_scantist_cve(CVE)
+        if tool == 1: # Blackduck
+            create_new_blackduck_cve(cve)
+        else:
+            create_new_scantist_cve(cve)
+            
+        print("done")
     
 
 def get_all_cve():
-    cve = get_all_cve_info()
-    return cve
+    return get_all_cve_info()
+    
 
 
 if __name__ == "__main__":
