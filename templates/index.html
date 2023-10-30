@@ -2,14 +2,41 @@
 <html>
     <head>
         <title>Home</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.1/min/dropzone.min.css">
     </head>
     <body>
-        {% for cve in cves %}
-            <div style="margin-bottom: 10px;">
-                {% for key in cve %}
-                    <div>{{key}} : {{cve[key]}}</div>
-                {% endfor %}
-            </div>
-        {% endfor %}    
+        <h1>Automated analyzer tool</h1>
+
+        <div style="margin-bottom: 10px; border: 1px black solid; padding: 0.5%;">
+            <h2>Get the CVEs rationaled</h2>
+            <form action="/api/upload" enctype="multipart/form-data" method="POST">
+                <input type="file" name="file" accept=".csv"><br/>
+                <label for="format">Choose a format:</label>
+                <select name="format">
+                    <option>None</option>
+                    <option value="blackduck">Blackduck</option>
+                    <option value="scantist">Scantist</option>
+                </select><br/>
+                <input type="submit">
+            </form>
+        </div>
+        
+        <div style="margin-bottom: 10px; border: 1px black solid; padding: 0.5%;">
+            <h2>Create new CVEs</h2>
+            <form action="/api/upload" enctype="multipart/form-data" method="POST">
+                <input type="file" name="file" accept=".csv, .xlsx"><br/>
+
+                <label for="format">Format:</label>
+                <input type="radio" name="format" value="blackduck">Blackduck
+                <input type="radio" name="format" value="scantist">Scantist<br/>
+
+                <label for="project">Project:</label>
+                <input type="radio" name="project" value="ipcamera">IP Camera
+                <input type="radio" name="project" value="router">Router<br/>
+
+                <input type="submit">
+            </form>
+        </div>
+        
     </body>
 </html>
