@@ -1,10 +1,9 @@
 from modules.db import blackduck_cve, scantist_cve
 from modules.db import get_cve
+from modules.db import get_cves
 from modules.db import check_if_cve_exist
 from modules.db import create_new_blackduck_cve
 from modules.db import create_new_scantist_cve
-from modules.db import get_all_cve_info
-import pandas as pd
 
 def get_rationale_cve_information(csv, format):
     

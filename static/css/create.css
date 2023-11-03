@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+form{
+    display: grid;
+    justify-items: center;
+    flex-wrap: wrap;
+    
+    margin: auto;
+    width: 75%;
+    border: 1px black solid;
+}
+.flexbox{
+    margin: 10px;
+    align-items: center;
+    border: 1px black solid;
+    padding: 10%;
+    width: 30%;
+}
+.button{
+    width: 50%;
+}

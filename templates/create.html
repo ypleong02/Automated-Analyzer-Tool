@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Create CVE</title>
+        <link rel="stylesheet" href="../static/css/create.css">
+    </head>
+    <body>
+        <form action="/page/create" method="POST">
+            {% for cve in cves %}
+            <div class="flexbox">
+                {% for key in cve %}
+                    <div>{{key}} : {{cve[key]}}</div>
+                {% endfor %}
+                <label for="project">Project:</label>
+                <input type="radio" name="project-{{cve['CVE_id']}}" value="ipcamera" required>IP Camera
+                <input type="radio" name="project-{{cve['CVE_id']}}" value="router">Router<br/>
+                <label for="rationale">Rationale: </label>
+                <div><input name="rationale-{{cve['CVE_id']}}" type="text" required></div>
+                <label for="impact">Impact: </label>
+                <div><input name="impact-{{cve['CVE_id']}}" type="text" required></div>
+                <label for="result">Result: </label>
+                <div><input name="result-{{cve['CVE_id']}}" type="text" required></div>
+                <label for="note">Note: </label>
+                <div><input name="note-{{cve['CVE_id']}}" type="text" required></div>
+            </div>
+            {% endfor %}
+            <input class="button" type="submit">
+        </form>
+        
+    </body>
+</html>
